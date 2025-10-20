@@ -15,6 +15,11 @@ export default defineNuxtConfig({
       pathPrefix: false
     },
     {
+      path: '~/components/features/career',
+      prefix: 'Career',
+      pathPrefix: false
+    },
+    {
       path: '~/components/ui',
       pathPrefix: false
     }
