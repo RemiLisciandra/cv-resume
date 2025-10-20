@@ -19,8 +19,8 @@
       </div>
 
       <!-- Cards -->
-      <div class="mx-auto max-w-2xl lg:max-w-none">
-        <div class="grid max-w-xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
+      <div class="mx-auto max-w-2xl xl:max-w-none">
+        <div class="grid grid-cols-1 gap-8 xl:grid-cols-3 place-items-center xl:place-items-stretch">
           <!-- Architecture logicielle -->
           <div class="group relative bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-white/20">
             <div class="flex items-center gap-x-4 mb-6">

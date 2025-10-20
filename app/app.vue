@@ -5,7 +5,7 @@
     <!-- Layout à deux colonnes -->
     <div class="h-full flex flex-col md:flex-row">
       <!-- Partie gauche : Contenu principal scrollable -->
-      <div class="flex-1 h-full overflow-hidden md:order-1">
+      <div class="flex-1 h-full overflow-hidden 2xl:order-1">
         <Main />
       </div>
       
