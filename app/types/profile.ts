@@ -10,6 +10,7 @@ export interface PersonalInfo {
   email: string
   imageUrl: string
   imageAlt: string
+  description: string
 }
 
 export interface CallToAction {

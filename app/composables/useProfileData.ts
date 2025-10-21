@@ -1,34 +1,17 @@
 import type { PersonalInfo, CallToAction } from '~/types/profile'
+import { personalInfo, callToActions } from '~/data/profile'
 
 /**
  * Composable pour gérer les données du profil
+ * Les données sont centralisées dans ~/data/profile.ts
  */
 export const useProfileData = () => {
   const getPersonalInfo = (): PersonalInfo => {
-    return {
-      fullName: 'Rémi LISCIANDRA',
-      title: 'Data Engineer',
-      age: 24,
-      location: 'Orléans',
-      email: 'remi.lisciandra@icloud.com',
-      imageUrl: '/me.png',
-      imageAlt: 'Rémi Lisciandra'
-    }
+    return personalInfo
   }
 
   const getCallToActions = (): CallToAction[] => {
-    return [
-      {
-        label: 'Me contacter',
-        href: '#contact',
-        variant: 'primary'
-      },
-      {
-        label: '2ème bouton',
-        href: '#jsp',
-        variant: 'secondary'
-      }
-    ]
+    return callToActions
   }
 
   return {

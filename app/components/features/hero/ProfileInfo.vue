@@ -22,7 +22,7 @@
     <HeroProfileEmail :email="personalInfo.email" />
     
     <!-- Description avec animation -->
-    <HeroProfileDescription />
+    <HeroProfileDescription :description="personalInfo.description" />
   </div>
 </template>
 

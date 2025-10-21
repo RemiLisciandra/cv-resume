@@ -1,9 +1,9 @@
 <template>
   <a 
-    href="https://www.destia.fr" 
+    :href="companyInfo.url" 
     target="_blank" 
     rel="noopener noreferrer" 
-    aria-label="Destia"
+    :aria-label="companyInfo.name"
     class="inline-flex items-center justify-center bg-white rounded-full p-4 shadow-xl w-32 h-32"
   >
     <svg width="129" height="46" class="h-10 w-auto" viewBox="0 0 129 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,7 +21,10 @@
 </template>
 
 <script setup lang="ts">
+import { destiaInfo as companyInfo } from '~/data/company'
+
 /**
  * Composant logo Destia avec cercle blanc et lien vers le site
+ * Les données (URL, nom) sont centralisées dans ~/data/company.ts
  */
 </script>

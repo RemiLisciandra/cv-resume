@@ -8,6 +8,15 @@ export default {
     './plugins/**/*.{js,ts}',
     './app.vue',
     './error.vue',
+    './app/**/*.{js,vue,ts}',
+  ],
+  safelist: [
+    'from-indigo-500',
+    'to-purple-600',
+    'from-blue-500',
+    'to-cyan-600',
+    'from-emerald-500',
+    'to-teal-600',
   ],
   darkMode: 'class',
   theme: {
