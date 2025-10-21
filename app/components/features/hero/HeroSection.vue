@@ -1,7 +1,7 @@
 <template>
   <div class="h-full flex flex-col bg-gray-900 p-8 lg:p-12">
     <!-- Photo de profil -->
-    <div class="flex justify-center mb-8" :class="{ 'animate-fade-in-up': isMounted }" style="animation-delay: 0.1s">
+    <div class="flex justify-center mb-8" :class="{ 'animate-fade-in-up': isMounted }" style="animation-delay: 0.15s">
       <HeroProfileImage 
         :image-url="personalInfo.imageUrl" 
         :image-alt="personalInfo.imageAlt"
@@ -10,17 +10,17 @@
     </div>
     
     <!-- Informations personnelles -->
-    <div class="flex-1" :class="{ 'animate-fade-in-up': isMounted }" style="animation-delay: 0.2s">
+    <div class="flex-1" :class="{ 'animate-fade-in-up': isMounted }" style="animation-delay: 0.35s">
       <HeroProfileInfo :personal-info="personalInfo" />
       
       <!-- Boutons d'action -->
-      <div class="mt-8" :class="{ 'animate-fade-in-up': isMounted }" style="animation-delay: 0.4s">
+      <div class="mt-8" :class="{ 'animate-fade-in-up': isMounted }" style="animation-delay: 0.65s">
         <CallToActionButtons :actions="callToActions" />
       </div>
     </div>
     
     <!-- Mentions légales -->
-    <div :class="{ 'animate-fade-in': isMounted }" style="animation-delay: 0.5s">
+    <div :class="{ 'animate-fade-in': isMounted }" style="animation-delay: 0.85s">
       <HeroLegalNotice :full-name="personalInfo.fullName" />
     </div>
   </div>
@@ -50,7 +50,7 @@ onMounted(() => {
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -69,11 +69,11 @@ onMounted(() => {
 
 .animate-fade-in-up {
   opacity: 0;
-  animation: fade-in-up 0.6s ease-out forwards;
+  animation: fade-in-up 1s ease-out forwards;
 }
 
 .animate-fade-in {
   opacity: 0;
-  animation: fade-in 0.6s ease-out forwards;
+  animation: fade-in 1s ease-out forwards;
 }
 </style>
