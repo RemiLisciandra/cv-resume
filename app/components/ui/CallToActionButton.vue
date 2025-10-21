@@ -1,15 +1,22 @@
 <template>
-  <a 
-    :href="href" 
-    :class="buttonClasses"
-  >
-    {{ label }}
-  </a>
+  <div class="relative inline-block">
+    <a 
+      ref="buttonRef"
+      :href="href" 
+      :class="buttonClasses"
+      :download="isDownloadLink ? '' : undefined"
+      @click="handleClick"
+    >
+      {{ label }}
+    </a>
+    <SparkleEffect ref="sparkleEffect" />
+  </div>
 </template>
 
 <script setup lang="ts">
 /**
  * Composant bouton d'action réutilisable
+ * Supporte les animations d'étoiles pour les téléchargements
  */
 
 interface Props {
@@ -19,6 +26,18 @@ interface Props {
 }
 
 const props = defineProps<Props>()
+const sparkleEffect = ref<{ trigger: () => void } | null>(null)
+const buttonRef = ref<HTMLAnchorElement | null>(null)
+
+const isDownloadLink = computed(() => {
+  return props.href.endsWith('.pdf') || props.href.endsWith('.doc') || props.href.endsWith('.docx')
+})
+
+const handleClick = () => {
+  if (isDownloadLink.value && sparkleEffect.value) {
+    sparkleEffect.value.trigger()
+  }
+}
 
 /**
  * Retourne les classes CSS selon le variant du bouton

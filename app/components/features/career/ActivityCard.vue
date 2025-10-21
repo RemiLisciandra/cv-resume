@@ -9,7 +9,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" :d="getIconPath(icon)" />
         </svg>
       </div>
-      <h3 class="text-xl font-bold text-gray-900">{{ title }}</h3>
+      <h3 class="text-lg font-bold text-gray-900">{{ title }}</h3>
     </div>
     <p class="text-base leading-7 text-gray-600" v-html="description"></p>
   </div>

@@ -18,8 +18,8 @@ export const callToActions: CallToAction[] = [
     variant: 'primary'
   },
   {
-    label: '2ème bouton',
-    href: '#jsp',
+    label: 'Télécharger mon CV',
+    href: '/cv.pdf',
     variant: 'secondary'
   }
 ]
