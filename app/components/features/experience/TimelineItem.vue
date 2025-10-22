@@ -4,13 +4,10 @@
     <div class="relative flex flex-col items-center">
       <!-- Point de connexion -->
       <div 
-        class="relative z-10 flex h-5 w-5 items-center justify-center rounded-full border-4 border-gray-900 transition-all duration-300"
-        :class="isLast ? 'bg-primary-500' : 'bg-white/20 group-hover:bg-primary-500'"
+        class="relative z-10 flex h-6 w-6 items-center justify-center rounded-full border-2 bg-white/30 border-white/40 transition-all duration-300 group-hover:bg-primary-500 group-hover:border-primary-300 group-hover:shadow-lg group-hover:shadow-primary-500/50"
       >
         <div 
-          v-if="!isLast" 
-          class="h-2 w-2 rounded-full transition-all duration-300"
-          :class="isLast ? '' : 'bg-transparent group-hover:bg-white'"
+          class="h-2.5 w-2.5 rounded-full bg-transparent transition-all duration-300 group-hover:bg-white group-hover:animate-pulse"
         />
       </div>
       
@@ -24,7 +21,7 @@
     <!-- Contenu de la carte -->
     <div class="flex-1 pb-12">
       <div 
-        class="group/card relative overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 p-6 transition-all duration-300 hover:bg-white/10 hover:border-primary-500/50 hover:shadow-xl hover:shadow-primary-500/10"
+        class="group/card relative overflow-hidden rounded-2xl bg-white/[0.15] backdrop-blur-md border border-white/30 p-6 shadow-lg shadow-black/20 transition-all duration-300 hover:bg-white/25 hover:border-white/50 hover:shadow-2xl hover:shadow-primary-400/20 hover:scale-[1.02]"
       >
         <!-- Header avec logo et infos -->
         <div class="flex items-start gap-4">
@@ -39,7 +36,7 @@
           
           <!-- Informations -->
           <div class="flex-1 min-w-0">
-            <h3 class="text-xl font-bold text-white mb-1 group-hover/card:text-primary-400 transition-colors">
+            <h3 class="text-xl font-bold text-white mb-1 transition-colors">
               {{ position }}
             </h3>
             <p class="text-base text-white/70 mb-2">
@@ -56,7 +53,7 @@
         
         <!-- Effet de brillance au hover -->
         <div class="absolute inset-0 -translate-x-full group-hover/card:translate-x-full transition-transform duration-1000 ease-in-out">
-          <div class="h-full w-1/2 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12" />
+          <div class="h-full w-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12" />
         </div>
       </div>
     </div>

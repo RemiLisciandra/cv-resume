@@ -7,30 +7,30 @@ import type { Experience } from '~/types/experience'
 
 export const experiences: Experience[] = [
   {
-    id: 'labo',
-    company: 'Laboratoire',
-    logo: '/companies/labo.jpg',
-    position: 'Stage Data Analyst',
-    period: '2020 - 2021',
-    startDate: '2020-09',
-    endDate: '2021-06'
-  },
-  {
-    id: 'vh',
-    company: 'VH Consulting',
-    logo: '/companies/vh.jpg',
-    position: 'Consultant BI',
-    period: '2021 - 2023',
-    startDate: '2021-06',
-    endDate: '2023-01'
-  },
-  {
     id: 'tx2',
     company: 'TX2 Concept',
     logo: '/companies/tx2.png',
-    position: 'Data Engineer',
-    period: '2023 - Aujourd\'hui',
-    startDate: '2023-01',
-    endDate: undefined
+    position: 'Consultant EDI',
+    period: 'Octobre 2024 - Juin 2025',
+    startDate: '2024-10',
+    endDate: '2025-06'
+  },
+  {
+    id: 'vh',
+    company: 'Valloire Habitat',
+    logo: '/companies/vh.jpg',
+    position: 'Développeur Full Stack / Responsable Projet',
+    period: 'Septembre 2021 - Septembre 2024',
+    startDate: '2021-09',
+    endDate: '2024-09'
+  },
+  {
+    id: 'labo',
+    company: "Lab'O Village by CA",
+    logo: '/companies/labo.jpg',
+    position: 'Développeur Web et Mobile',
+    period: 'Août 2019 - Septembre 2021',
+    startDate: '2019-08',
+    endDate: '2021-09'
   }
 ]
