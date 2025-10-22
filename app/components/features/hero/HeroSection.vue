@@ -1,7 +1,7 @@
 <template>
   <div class="h-full flex flex-col bg-gray-900 p-8 lg:p-12">
     <!-- Photo de profil -->
-    <div class="flex justify-center mb-8" :class="{ 'animate-fade-in-up': isMounted }" style="animation-delay: 0.15s">
+    <div class="flex justify-center mb-8" :class="{ 'animate-fade-in-pop': isMounted }" style="animation-delay: 0.5s">
       <HeroProfileImage 
         :image-url="personalInfo.imageUrl" 
         :image-alt="personalInfo.imageAlt"
@@ -47,6 +47,17 @@ onMounted(() => {
 </script>
 
 <style scoped>
+@keyframes fade-in-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -65,6 +76,11 @@ onMounted(() => {
   to {
     opacity: 1;
   }
+}
+
+.animate-fade-in-pop {
+  opacity: 0;
+  animation: fade-in-pop 1.2s ease-out forwards;
 }
 
 .animate-fade-in-up {

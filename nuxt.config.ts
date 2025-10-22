@@ -20,6 +20,10 @@ export default defineNuxtConfig({
       pathPrefix: false
     },
     {
+      path: '~/components/features/experience',
+      pathPrefix: false
+    },
+    {
       path: '~/components/ui',
       pathPrefix: false
     }
@@ -27,11 +31,11 @@ export default defineNuxtConfig({
   
   app: {
     head: {
-      title: 'CV - Rémi Lisciandra',
+      title: 'CV resume - RL',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'CV de Rémi Lisciandra - Data Engineer' }
+        { name: 'description', content: 'Résumé du CV de Rémi Lisciandra' }
       ]
     }
   }

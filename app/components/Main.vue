@@ -2,6 +2,9 @@
   <div class="relative h-full overflow-y-auto bg-gradient-to-br from-primary-600 to-accent-600" :class="{ 'animate-fade-in-left': isMounted }">
     <!-- Section métier actuel -->
     <CareerCurrentJobSection />
+    
+    <!-- Timeline des expériences -->
+    <ExperienceTimeline />
   </div>
 </template>
 

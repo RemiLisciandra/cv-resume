@@ -6,6 +6,6 @@ export interface CompanyInfo {
 
 export const destiaInfo: CompanyInfo = {
   name: 'Destia',
-  description: 'Destia propose un accompagnement à domicile personnalisé pour les personnes âgées, en situation de handicap ou leurs aidants, couvrant l\'aide à la personne, le ménage, les repas, etc.',
+  description: 'Destia propose un accompagnement à domicile personnalisé pour les personnes âgées, en situation de handicap ou leurs aidants, couvrant l\'aide à la personne.',
   url: 'https://www.destia.fr'
 }
