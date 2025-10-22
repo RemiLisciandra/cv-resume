@@ -13,6 +13,7 @@
           :logo="experience.logo"
           :position="experience.position"
           :period="experience.period"
+          :contract-type="experience.contractType"
           :is-last="index === experiences.length - 1"
           :index="index"
         />

@@ -28,6 +28,11 @@
       <div 
         class="group/card relative overflow-hidden rounded-xl sm:rounded-2xl bg-white/[0.15] backdrop-blur-md border border-white/30 p-4 sm:p-6 shadow-lg shadow-black/20 transition-all duration-300 hover:bg-white/25 hover:border-white/50 hover:shadow-2xl hover:shadow-primary-400/20 hover:scale-[1.02]"
       >
+        <!-- Badge type de contrat en haut à droite -->
+        <span class="absolute top-3 right-3 sm:top-4 sm:right-4 inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-white/90 text-primary-600 border border-white shadow-sm">
+          {{ contractType }}
+        </span>
+        
         <!-- Header avec logo et infos -->
         <div class="flex items-start gap-3 sm:gap-4">
           <!-- Logo -->
@@ -76,6 +81,7 @@ interface Props {
   logo: string
   position: string
   period: string
+  contractType: string
   isLast?: boolean
   index?: number
 }

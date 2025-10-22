@@ -18,6 +18,7 @@ export interface Experience {
   logo: string
   position: string
   period: string
+  contractType: string
   startDate: string
   endDate?: string
   infoContent?: InfoContent
