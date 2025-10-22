@@ -30,7 +30,7 @@
             <CompanyLogo 
               :logo="logo" 
               :alt="company"
-              size="medium"
+              size="large"
             />
           </div>
           

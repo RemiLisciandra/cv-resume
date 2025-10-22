@@ -1,9 +1,12 @@
+import type { InfoContent } from '~/types/experience'
+
 export interface Activity {
   id: string
   title: string
   description: string
   icon: string
   gradient: string
+  infoContent?: InfoContent
 }
 
 export const activities: Activity[] = [
@@ -19,7 +22,20 @@ export const activities: Activity[] = [
     title: 'BI / EPM',
     description: 'Création de <span class="font-semibold text-primary-500">rapports analytiques</span>, conception de <span class="font-semibold text-primary-500">cubes dimensionnels</span> et développement de <span class="font-semibold text-primary-500">tableaux de bord interactifs</span> pour faciliter la prise de décision stratégique.',
     icon: 'chart',
-    gradient: 'from-blue-500 to-cyan-600'
+    gradient: 'from-blue-500 to-cyan-600',
+    infoContent: {
+      title: 'Qu\'est-ce que la BI et l\'EPM ?',
+      items: [
+        {
+          term: 'BI (Business Intelligence)',
+          definition: "Ensemble de solutions permettant de collecter, transformer et visualiser les données afin d'aider les entreprises à prendre des décisions éclairées."
+        },
+        {
+          term: 'EPM (Enterprise Performance Management)',
+          definition: "Outils et processus visant à planifier, piloter et analyser la performance globale de l'entreprise pour aligner la stratégie sur les résultats opérationnels."
+        }
+      ]
+    }
   },
   {
     id: 'data-analyst',

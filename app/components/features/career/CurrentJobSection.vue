@@ -17,6 +17,7 @@
             :description="activity.description"
             :icon="activity.icon"
             :gradient="activity.gradient"
+            :info-content="activity.infoContent"
           />
         </div>
       </div>

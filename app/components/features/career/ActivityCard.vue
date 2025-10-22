@@ -1,5 +1,16 @@
 <template>
   <div class="group relative bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-white/20">
+    <!-- Bouton Info (si infoContent existe) -->
+    <button
+      v-if="infoContent"
+      @click.stop="showModal = true"
+      class="absolute top-4 right-4 flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 hover:bg-primary-100 text-gray-600 hover:text-primary-600 border-1 border-gray-300 hover:border-primary-500 transition-all duration-300 shadow-sm hover:shadow-md z-10"
+      aria-label="Plus d'informations"
+    >
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+      </svg>
+    </button>
     <div class="flex items-center gap-x-4 mb-6">
       <div 
         class="flex h-12 w-12 items-center justify-center rounded-xl shadow-lg"
@@ -12,6 +23,15 @@
       <h3 class="text-lg font-bold text-gray-900">{{ title }}</h3>
     </div>
     <p class="text-base leading-7 text-gray-600" v-html="description"></p>
+    
+    <!-- Modal Info -->
+    <InfoModal
+      v-if="infoContent"
+      :is-open="showModal"
+      :title="infoContent.title"
+      :items="infoContent.items"
+      @close="showModal = false"
+    />
   </div>
 </template>
 
@@ -21,14 +41,19 @@
  * Affiche une activité professionnelle avec un style moderne et des animations
  */
 
+import type { InfoContent } from '~/types/experience'
+
 interface Props {
   title: string
   description: string
   icon: string
   gradient: string
+  infoContent?: InfoContent
 }
 
 defineProps<Props>()
+
+const showModal = ref(false)
 
 /**
  * Mapping des noms d'icônes vers leurs chemins SVG
