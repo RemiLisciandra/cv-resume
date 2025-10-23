@@ -5,6 +5,9 @@
     
     <!-- Timeline des expériences -->
     <ExperienceTimeline />
+    
+    <!-- Section formations académiques -->
+    <EducationSection />
   </div>
 </template>
 

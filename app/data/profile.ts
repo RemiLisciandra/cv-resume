@@ -14,7 +14,7 @@ export const personalInfo: PersonalInfo = {
 export const callToActions: CallToAction[] = [
   {
     label: 'Me contacter',
-    href: '#contact',
+    href: 'mailto:remi.lisciandra@icloud.com',
     variant: 'primary'
   },
   {

@@ -28,11 +28,6 @@
       <div 
         class="group/card relative overflow-hidden rounded-xl sm:rounded-2xl bg-white/[0.15] backdrop-blur-md border border-white/30 p-4 sm:p-6 shadow-lg shadow-black/20 transition-all duration-300 hover:bg-white/25 hover:border-white/50 hover:shadow-2xl hover:shadow-primary-400/20 hover:scale-[1.02]"
       >
-        <!-- Badge type de contrat en haut à droite -->
-        <span class="absolute top-3 right-3 sm:top-4 sm:right-4 inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold bg-white/90 text-primary-600 border border-white shadow-sm">
-          {{ contractType }}
-        </span>
-        
         <!-- Header avec logo et infos -->
         <div class="flex items-start gap-3 sm:gap-4">
           <!-- Logo -->
@@ -46,9 +41,13 @@
           
           <!-- Informations -->
           <div class="flex-1 min-w-0">
-            <h3 class="text-base sm:text-xl font-bold text-white mb-1 transition-colors leading-tight">
-              {{ position }}
-            </h3>
+            <div class="flex items-start justify-between gap-2 mb-1">
+              <h3 class="text-base sm:text-xl font-bold text-white transition-colors leading-tight flex-1">
+                {{ position }}
+              </h3>
+              <!-- Badge type de contrat -->
+              <Badge custom-class="flex-shrink-0">{{ contractType }}</Badge>
+            </div>
             <p class="text-sm sm:text-base text-white/70 mb-1.5 sm:mb-2">
               {{ company }}
             </p>
