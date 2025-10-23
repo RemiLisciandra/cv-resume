@@ -1,6 +1,9 @@
 <template>
   <div 
-    class="group relative rounded-3xl p-8 ring-2 ring-white/30 bg-white/[0.15] backdrop-blur-md border border-white/20 shadow-xl shadow-black/30 hover:bg-white/25 hover:ring-white/40 hover:border-white/30 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-400/20 hover:scale-[1.02] xl:p-10"
+    ref="cardElement"
+    class="group relative rounded-3xl p-8 ring-2 ring-white/30 bg-white/[0.15] backdrop-blur-md border border-white/20 shadow-xl shadow-black/30 hover:bg-white/25 hover:ring-white/40 hover:border-white/30 transition-all duration-700 ease-out hover:shadow-2xl hover:shadow-primary-400/20 hover:scale-[1.02] xl:p-10"
+    :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
+    :style="{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }"
   >
     <!-- Logo de l'école -->
     <div class="flex items-center justify-center mb-6">
@@ -48,10 +51,12 @@
           class="flex items-start gap-x-3"
         >
           <svg 
-            class="h-5 w-5 flex-none text-indigo-400 mt-0.5" 
+            class="h-5 w-5 flex-none text-emerald-400 mt-0.5" 
             viewBox="0 0 20 20" 
             fill="currentColor" 
             aria-hidden="true"
+            stroke="currentColor"
+            stroke-width="0.5"
           >
             <path 
               fill-rule="evenodd" 
@@ -79,7 +84,43 @@ interface Props {
   level: string
   period: string
   skills: string[]
+  index?: number
 }
 
-defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  index: 0
+})
+
+// Animation d'apparition au scroll
+const cardElement = ref<HTMLElement | null>(null)
+const isVisible = ref(false)
+
+onMounted(() => {
+  // Intersection Observer pour l'animation au scroll
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          isVisible.value = true
+          // Une fois visible, on peut arrêter d'observer
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    {
+      threshold: 0.1, // L'élément doit être visible à 10%
+      rootMargin: '0px 0px -50px 0px' // Déclenche un peu avant que l'élément soit visible
+    }
+  )
+  
+  if (cardElement.value) {
+    observer.observe(cardElement.value)
+  }
+  
+  onUnmounted(() => {
+    if (cardElement.value) {
+      observer.unobserve(cardElement.value)
+    }
+  })
+})
 </script>

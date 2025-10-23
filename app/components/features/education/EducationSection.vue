@@ -4,15 +4,10 @@
       <!-- Titre de la section -->
       <SectionTitle>Ma formation académique</SectionTitle>
 
-      <!-- Description -->
-      <p class="mx-auto mt-6 max-w-2xl text-center text-base font-medium text-white/70 sm:text-lg">
-        Mon parcours de formation, des fondamentaux du BTS aux compétences de management acquises en Master
-      </p>
-
       <!-- Grille des formations -->
       <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
         <EducationCard
-          v-for="education in educations"
+          v-for="(education, index) in educations"
           :key="education.id"
           :school="education.school"
           :logo="education.logo"
@@ -20,6 +15,7 @@
           :level="education.level"
           :period="education.period"
           :skills="education.skills"
+          :index="index"
         />
       </div>
     </div>

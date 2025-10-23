@@ -1,5 +1,5 @@
 <template>
-  <div class="py-6 sm:py-16">
+  <div class="py-8 sm:py-16">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <!-- Header avec logo et description -->
       <CareerCompanyHeader :description="companyInfo.description" />
