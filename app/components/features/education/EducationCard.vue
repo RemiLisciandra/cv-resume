@@ -72,6 +72,8 @@
 </template>
 
 <script setup lang="ts">
+import { useScrollAnimation } from '~/composables/useScrollAnimation'
+
 /**
  * Composant carte de formation académique
  * Affiche les détails d'une formation avec logo, diplôme et compétences

@@ -70,6 +70,9 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useScrollAnimation } from '~/composables/useScrollAnimation'
+
 /**
  * Composant élément de timeline pour une expérience professionnelle
  * Affiche le logo de l'entreprise, le poste et la période avec un design moderne

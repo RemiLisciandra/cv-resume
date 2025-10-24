@@ -36,6 +36,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
 /**
  * Composant carte d'activité avec icône, titre et description
  * Affiche une activité professionnelle avec un style moderne et des animations
