@@ -17,6 +17,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 /**
  * Composant d'image de profil réutilisable
  */
