@@ -1,6 +1,6 @@
 <template>
   <div class="mt-8 flex flex-wrap gap-4">
-    <CallToActionButton
+    <ActionButton
       v-for="action in actions"
       :key="action.href"
       :label="action.label"
@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 /**
- * Composant conteneur pour les boutons d'action
+ * Composant conteneur pour grouper plusieurs boutons d'action
  */
 
 import type { CallToAction } from '~/types/profile'

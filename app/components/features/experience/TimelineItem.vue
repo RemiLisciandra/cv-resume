@@ -93,8 +93,7 @@ const props = withDefaults(defineProps<Props>(), {
 const isMobile = ref(false)
 
 // Animation d'apparition au scroll
-const timelineElement = ref<HTMLElement | null>(null)
-const isVisible = ref(false)
+const { elementRef: timelineElement, isVisible } = useScrollAnimation()
 
 onMounted(() => {
   // Détection mobile
@@ -105,32 +104,8 @@ onMounted(() => {
   checkMobile()
   window.addEventListener('resize', checkMobile)
   
-  // Intersection Observer pour l'animation au scroll
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          isVisible.value = true
-          // Une fois visible, on peut arrêter d'observer
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    {
-      threshold: 0.1, // L'élément doit être visible à 10%
-      rootMargin: '0px 0px -50px 0px' // Déclenche un peu avant que l'élément soit visible
-    }
-  )
-  
-  if (timelineElement.value) {
-    observer.observe(timelineElement.value)
-  }
-  
   onUnmounted(() => {
     window.removeEventListener('resize', checkMobile)
-    if (timelineElement.value) {
-      observer.unobserve(timelineElement.value)
-    }
   })
 })
 </script>

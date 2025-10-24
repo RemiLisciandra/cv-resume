@@ -15,7 +15,7 @@
       
       <!-- Boutons d'action -->
       <div class="mt-8" :class="{ 'animate-fade-in-up': isMounted }" style="animation-delay: 0.65s">
-        <CallToActionButtons :actions="callToActions" />
+        <ActionButtonGroup :actions="callToActions" />
       </div>
     </div>
     

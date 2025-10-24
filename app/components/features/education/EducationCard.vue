@@ -92,35 +92,5 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 // Animation d'apparition au scroll
-const cardElement = ref<HTMLElement | null>(null)
-const isVisible = ref(false)
-
-onMounted(() => {
-  // Intersection Observer pour l'animation au scroll
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          isVisible.value = true
-          // Une fois visible, on peut arrêter d'observer
-          observer.unobserve(entry.target)
-        }
-      })
-    },
-    {
-      threshold: 0.1, // L'élément doit être visible à 10%
-      rootMargin: '0px 0px -50px 0px' // Déclenche un peu avant que l'élément soit visible
-    }
-  )
-  
-  if (cardElement.value) {
-    observer.observe(cardElement.value)
-  }
-  
-  onUnmounted(() => {
-    if (cardElement.value) {
-      observer.unobserve(cardElement.value)
-    }
-  })
-})
+const { elementRef: cardElement, isVisible } = useScrollAnimation()
 </script>
