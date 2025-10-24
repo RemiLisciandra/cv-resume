@@ -1,3 +1,5 @@
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
+
 /**
  * Composable pour gérer l'état et le comportement de la sidebar responsive
  * Gère les breakpoints et l'ouverture/fermeture du menu

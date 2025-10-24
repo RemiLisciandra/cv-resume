@@ -1,0 +1,19 @@
+{
+  "extends": "./.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "types": ["vitest/globals", "@vue/test-utils"],
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true
+  },
+  "include": [
+    "tests/**/*.ts",
+    "tests/**/*.spec.ts",
+    "app/**/*.ts",
+    "app/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".nuxt"
+  ]
+}

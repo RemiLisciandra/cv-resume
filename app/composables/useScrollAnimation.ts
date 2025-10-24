@@ -1,3 +1,5 @@
+import { ref, onMounted, onUnmounted } from 'vue'
+
 /**
  * Composable pour gérer les animations au scroll avec IntersectionObserver
  * Utilisé pour animer les éléments lorsqu'ils entrent dans le viewport
