@@ -14,6 +14,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref, computed } from 'vue'
+
 /**
  * Composant bouton d'action réutilisable
  * Supporte les animations d'étoiles pour les téléchargements

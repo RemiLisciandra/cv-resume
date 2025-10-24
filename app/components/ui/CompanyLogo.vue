@@ -12,6 +12,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+
 /**
  * Composant logo d'entreprise avec fond blanc arrondi
  * Affiche un logo avec un conteneur blanc stylisé et effet hover

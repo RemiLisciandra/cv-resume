@@ -16,6 +16,8 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
 /**
  * Composant d'effet d'étoiles scintillantes
  * Affiche des étoiles animées qui apparaissent et disparaissent
