@@ -2,7 +2,7 @@
   <div class="h-screen overflow-hidden bg-gray-900 relative">
     <NuxtRouteAnnouncer />
     
-    <!-- Bouton burger (visible < 1080px) -->
+    <!-- Bouton burger (visible < 1280px) -->
     <div 
       v-if="showBurgerMenu" 
       class="fixed top-4 right-4 z-50"
@@ -58,8 +58,8 @@
 /**
  * Composant racine de l'application
  * Layout responsive : split-screen sur desktop, sidebar avec burger menu sur mobile
- * - >= 1080px : Layout côte à côte classique
- * - < 1080px : Sidebar avec burger menu
+ * - >= 1280px : Layout côte à côte classique
+ * - < 1280px : Sidebar avec burger menu
  * - < 900px : Sidebar en plein écran
  */
 

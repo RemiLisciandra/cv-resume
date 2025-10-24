@@ -7,7 +7,7 @@ import type { Education } from '~/types/education'
 
 export const educations: Education[] = [
   {
-    id: 'aftec',
+    id: 'aftec-dev',
     school: 'AFTEC',
     logo: '/work-study/aftec.png',
     degree: 'BTS Services Informatiques aux Organisations',
@@ -16,11 +16,10 @@ export const educations: Education[] = [
     startDate: '2017-09',
     endDate: '2019-06',
     skills: [
-      'Développement d\'applications',
-      'Gestion de bases de données',
-      'Administration système',
-      'Support technique',
-      'Gestion de projet'
+      'Modélisation des besoins via MERISE',
+      'Identifications des besoins via UML',
+      'Gestion de projet',
+      'Gestion de base de données'
     ]
   },
   {
@@ -33,11 +32,10 @@ export const educations: Education[] = [
     startDate: '2019-09',
     endDate: '2021-09',
     skills: [
-      'Architecture logicielle',
-      'Développement web et mobile',
+      'DevOps et CI/CD',
       'Méthodologies Agile',
+      'Sécurité des applications',
       'Tests et qualité logicielle',
-      'DevOps et CI/CD'
     ]
   },
   {
@@ -50,10 +48,9 @@ export const educations: Education[] = [
     startDate: '2022-09',
     endDate: '2024-09',
     skills: [
-      'Management d\'équipe',
-      'Architecture d\'entreprise',
+      'Architecture logicielle',
+      'Big Data',
       'Stratégie IT',
-      'Innovation technologique',
       'Transformation digitale'
     ]
   }

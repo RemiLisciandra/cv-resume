@@ -8,7 +8,7 @@ export const useResponsiveSidebar = () => {
   const windowWidth = ref(0)
 
   // Breakpoints
-  const DESKTOP_BREAKPOINT = 1080
+  const DESKTOP_BREAKPOINT = 1280
   const MOBILE_FULLSCREEN_BREAKPOINT = 900
 
   const isDesktop = computed(() => windowWidth.value >= DESKTOP_BREAKPOINT)
@@ -57,7 +57,7 @@ export const useResponsiveSidebar = () => {
     updateWindowWidth()
     window.addEventListener('resize', updateWindowWidth)
     
-    // Watch pour fermer automatiquement sous 1080px
+    // Watch pour fermer automatiquement sous 1280px
     watch(windowWidth, (newWidth, oldWidth) => {
       if (oldWidth >= DESKTOP_BREAKPOINT && newWidth < DESKTOP_BREAKPOINT) {
         handleBreakpointChange()

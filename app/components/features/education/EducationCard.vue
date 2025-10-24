@@ -5,6 +5,11 @@
     :class="isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'"
     :style="{ transitionDelay: isVisible ? `${index * 150}ms` : '0ms' }"
   >
+    <!-- Badge niveau d'études en haut à droite -->
+    <div class="absolute top-3 right-3 sm:top-4 sm:right-4">
+      <Badge>{{ level }}</Badge>
+    </div>
+
     <!-- Logo de l'école -->
     <div class="flex items-center justify-center mb-6">
       <div class="relative w-28 h-28 rounded-2xl overflow-hidden bg-white p-4 shadow-xl ring-2 ring-gray-300/50 group-hover:ring-primary-300/50 transition-all duration-300">
@@ -20,11 +25,6 @@
     <h3 class="text-xl font-semibold text-white text-center mb-2">
       {{ school }}
     </h3>
-
-    <!-- Badge niveau d'études -->
-    <div class="flex justify-center mb-4">
-      <Badge>{{ level }}</Badge>
-    </div>
 
     <!-- Titre du diplôme -->
     <p class="text-base font-semibold text-white text-center mb-4 min-h-[3rem] flex items-center justify-center">
@@ -42,7 +42,7 @@
     <!-- Liste des compétences -->
     <div class="space-y-3">
       <p class="text-sm font-bold text-white mb-3">
-        Compétences acquises
+        Sujets étudiés
       </p>
       <ul role="list" class="space-y-3 text-sm text-white/80">
         <li 

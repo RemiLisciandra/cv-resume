@@ -2,7 +2,7 @@
   <div class="py-8 sm:py-16">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <!-- Titre de la section -->
-      <SectionTitle>Ma formation académique</SectionTitle>
+      <SectionTitle>Mon parcours de formation</SectionTitle>
 
       <!-- Grille des formations -->
       <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
