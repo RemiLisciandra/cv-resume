@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full flex flex-col bg-gray-900 p-8 lg:p-12">
+  <div class="h-full flex flex-col bg-gray-900 p-8 lg:p-12 overflow-y-auto">
     <!-- Photo de profil -->
     <div class="flex justify-center mb-8" :class="{ 'animate-fade-in-pop': isMounted }" style="animation-delay: 0.5s">
       <HeroProfileImage 
