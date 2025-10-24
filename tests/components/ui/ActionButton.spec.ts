@@ -3,13 +3,22 @@ import { mount } from '@vue/test-utils'
 import ActionButton from '~/components/ui/ActionButton.vue'
 
 describe('ActionButton', () => {
+  const defaultStubs = {
+    global: {
+      stubs: {
+        SparkleEffect: true
+      }
+    }
+  }
+
   it('devrait afficher le label correctement', () => {
     const wrapper = mount(ActionButton, {
       props: {
         label: 'Click me',
         href: '/test',
         variant: 'primary'
-      }
+      },
+      ...defaultStubs
     })
 
     expect(wrapper.text()).toContain('Click me')
@@ -21,7 +30,8 @@ describe('ActionButton', () => {
         label: 'Test',
         href: 'https://example.com',
         variant: 'primary'
-      }
+      },
+      ...defaultStubs
     })
 
     const link = wrapper.find('a')
@@ -34,7 +44,8 @@ describe('ActionButton', () => {
         label: 'Test',
         href: '/test',
         variant: 'primary'
-      }
+      },
+      ...defaultStubs
     })
 
     const link = wrapper.find('a')
@@ -48,7 +59,8 @@ describe('ActionButton', () => {
         label: 'Test',
         href: '/test',
         variant: 'secondary'
-      }
+      },
+      ...defaultStubs
     })
 
     const link = wrapper.find('a')
@@ -62,7 +74,8 @@ describe('ActionButton', () => {
         label: 'Download',
         href: '/cv.pdf',
         variant: 'primary'
-      }
+      },
+      ...defaultStubs
     })
 
     const link = wrapper.find('a')
@@ -75,7 +88,8 @@ describe('ActionButton', () => {
         label: 'Download',
         href: '/document.doc',
         variant: 'primary'
-      }
+      },
+      ...defaultStubs
     })
 
     const link = wrapper.find('a')
@@ -88,7 +102,8 @@ describe('ActionButton', () => {
         label: 'Download',
         href: '/document.docx',
         variant: 'primary'
-      }
+      },
+      ...defaultStubs
     })
 
     const link = wrapper.find('a')
@@ -101,7 +116,8 @@ describe('ActionButton', () => {
         label: 'Link',
         href: 'https://example.com',
         variant: 'primary'
-      }
+      },
+      ...defaultStubs
     })
 
     const link = wrapper.find('a')
@@ -114,7 +130,8 @@ describe('ActionButton', () => {
         label: 'Test',
         href: '/test',
         variant: 'primary'
-      }
+      },
+      ...defaultStubs
     })
 
     const link = wrapper.find('a')
