@@ -1,26 +1,18 @@
 <template>
   <div>
-    <!-- Logo -->
-    <div class="flex justify-center mb-6">
-      <DestiaLogo />
-    </div>
+    <SectionTitle
+      >Les compétences techs avec lesquels j'aime travailler en
+      2026</SectionTitle
+    >
 
-    <!-- Description -->
-    <div class="mx-auto max-w-2xl text-center mb-6">
-      <p class="text-lg/8 text-white/80">{{ description }}</p>
+    <div
+      class="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-3 sm:p-6 border border-white/10 mb-8 overflow-x-auto"
+    >
+      <ClientOnly>
+        <DataPipelineSVG />
+      </ClientOnly>
     </div>
   </div>
 </template>
 
-<script setup lang="ts">
-/**
- * Composant header d'entreprise avec logo et description
- * Affiche les informations de présentation de l'entreprise actuelle
- */
-
-interface Props {
-  description: string
-}
-
-defineProps<Props>()
-</script>
+<script setup lang="ts"></script>

@@ -1,133 +1,77 @@
-import { describe, it, expect } from 'vitest'
-import { mount } from '@vue/test-utils'
-import CompanyHeader from '~/components/features/career/CompanyHeader.vue'
+import { describe, it, expect } from "vitest";
+import { mount } from "@vue/test-utils";
+import CompanyHeader from "~/components/features/career/CompanyHeader.vue";
 
-describe('CompanyHeader', () => {
-  it('devrait afficher la description', () => {
+describe("CompanyHeader", () => {
+  const defaultStubs = {
+    DataPipelineSVG: true,
+    ClientOnly: {
+      template: '<div class="client-only-stub"><slot /></div>',
+    },
+    SectionTitle: {
+      template: '<div class="section-title-stub"><slot /></div>',
+    },
+  };
+
+  it("devrait avoir le DataPipelineSVG", () => {
     const wrapper = mount(CompanyHeader, {
-      props: {
-        description: 'Entreprise leader dans la data'
-      },
       global: {
         stubs: {
-          DestiaLogo: true
-        }
-      }
-    })
-
-    expect(wrapper.text()).toContain('Entreprise leader dans la data')
-  })
-
-  it('devrait avoir un DestiaLogo', () => {
-    const wrapper = mount(CompanyHeader, {
-      props: {
-        description: 'Test description'
+          DataPipelineSVG: {
+            template: '<div class="pipeline-stub"></div>',
+          },
+          ClientOnly: {
+            template: "<div><slot /></div>",
+          },
+          SectionTitle: true,
+        },
       },
-      global: {
-        stubs: {
-          DestiaLogo: {
-            template: '<div class="destia-logo-stub"></div>'
-          }
-        }
-      }
-    })
+    });
 
-    expect(wrapper.find('.destia-logo-stub').exists()).toBe(true)
-  })
+    expect(wrapper.find(".pipeline-stub").exists()).toBe(true);
+  });
 
-  it('devrait centrer le logo', () => {
+  it("devrait afficher le titre compétences techniques", () => {
     const wrapper = mount(CompanyHeader, {
-      props: {
-        description: 'Test'
-      },
       global: {
-        stubs: {
-          DestiaLogo: true
-        }
-      }
-    })
+        stubs: defaultStubs,
+      },
+    });
 
-    const logoContainer = wrapper.find('.flex.justify-center')
-    expect(logoContainer.exists()).toBe(true)
-  })
+    expect(wrapper.text()).toContain(
+      "Quelques compétences techniques avec lesquels j'aime travailler en 2026",
+    );
+  });
 
-  it('devrait avoir le texte de description centré', () => {
+  it("ne devrait pas mentionner Destia", () => {
     const wrapper = mount(CompanyHeader, {
-      props: {
-        description: 'Test'
-      },
       global: {
-        stubs: {
-          DestiaLogo: true
-        }
-      }
-    })
+        stubs: defaultStubs,
+      },
+    });
 
-    const descriptionContainer = wrapper.find('.text-center')
-    expect(descriptionContainer.exists()).toBe(true)
-  })
+    expect(wrapper.text()).not.toContain("Destia");
+    expect(wrapper.find("a").exists()).toBe(false);
+  });
 
-  it('devrait avoir les bonnes classes de texte', () => {
+  it("devrait avoir un conteneur card pour le pipeline", () => {
     const wrapper = mount(CompanyHeader, {
-      props: {
-        description: 'Test'
-      },
       global: {
-        stubs: {
-          DestiaLogo: true
-        }
-      }
-    })
+        stubs: defaultStubs,
+      },
+    });
 
-    const description = wrapper.find('p')
-    expect(description.classes()).toContain('text-lg/8')
-    expect(description.classes()).toContain('text-white/80')
-  })
+    const card = wrapper.find(".rounded-2xl");
+    expect(card.exists()).toBe(true);
+  });
 
-  it('devrait gérer une description vide', () => {
+  it("devrait utiliser le composant SectionTitle", () => {
     const wrapper = mount(CompanyHeader, {
-      props: {
-        description: ''
-      },
       global: {
-        stubs: {
-          DestiaLogo: true
-        }
-      }
-    })
-
-    expect(wrapper.exists()).toBe(true)
-  })
-
-  it('devrait avoir une largeur maximale pour le texte', () => {
-    const wrapper = mount(CompanyHeader, {
-      props: {
-        description: 'Test'
+        stubs: defaultStubs,
       },
-      global: {
-        stubs: {
-          DestiaLogo: true
-        }
-      }
-    })
+    });
 
-    const container = wrapper.find('.max-w-2xl')
-    expect(container.exists()).toBe(true)
-  })
-
-  it('devrait avoir un espacement autour du logo', () => {
-    const wrapper = mount(CompanyHeader, {
-      props: {
-        description: 'Test'
-      },
-      global: {
-        stubs: {
-          DestiaLogo: true
-        }
-      }
-    })
-
-    const logoContainer = wrapper.find('.mb-6')
-    expect(logoContainer.exists()).toBe(true)
-  })
-})
+    expect(wrapper.find(".section-title-stub").exists()).toBe(true);
+  });
+});

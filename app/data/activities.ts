@@ -13,7 +13,7 @@ export const activities: Activity[] = [
   {
     id: 'architecture',
     title: 'Architecture logicielle',
-    description: 'Conception et mise en œuvre de <span class="font-semibold text-primary-500">flux de données</span> entrants et sortants, développement d\'<span class="font-semibold text-primary-500">API robustes</span>, optimisation des <span class="font-semibold text-primary-500">bases de données</span> et des processus <span class="font-semibold text-primary-500">ETL</span> pour garantir <span class="font-semibold text-primary-500">performance</span> et <span class="font-semibold text-primary-500">scalabilité</span>.',
+    description: 'Conception et mise en œuvre de <span class="font-semibold text-primary-500">flux de données</span> entrants et sortants, développement d\'<span class="font-semibold text-primary-500">API robustes</span>, optimisation des <span class="font-semibold text-primary-500">bases de données</span> et des processus <span class="font-semibold text-primary-500">ETL/ELT</span> pour garantir <span class="font-semibold text-primary-500">performance</span> et <span class="font-semibold text-primary-500">scalabilité</span>.',
     icon: 'database',
     gradient: 'from-indigo-500 to-purple-600'
   },
