@@ -39,7 +39,7 @@ describe("CompanyHeader", () => {
     });
 
     expect(wrapper.text()).toContain(
-      "Quelques compétences techniques avec lesquels j'aime travailler en 2026",
+      "Les compétences techs avec lesquels j'aime travailler en 2026",
     );
   });
 
